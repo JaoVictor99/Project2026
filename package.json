@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-   "dev": "node src/controller/app.js",
-  "prod": "node src/views/index.js"
+   "dev": "node src/controller/appp.js",
+  "prod": "node src/views/appp.js"
   },
   "keywords": [],
   "author": "",
