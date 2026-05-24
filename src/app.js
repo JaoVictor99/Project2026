@@ -91,10 +91,7 @@ app.post('/cadastroProduto', (req,res) => {
 
 
 
+module.exports = app;
 
 
-// Startado o Servidor ma porta 3000
 
-app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
-})
