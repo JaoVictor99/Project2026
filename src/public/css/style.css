@@ -1,21 +1,27 @@
 body{
 
+
+background-image: url("/img/imgFundo.jpg");
+background-size: cover;
     font-family: Arial;
 
     background-color: #f4f4f4;
 
     display:flex;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     align-items:center;
 
     height:100vh;
+
+    padding-left: 200px;
 }
 
-.login-box{
+.container{
 
-    background:white;
+    
+    background:rgb(100, 105, 249,0.8);
 
     padding:30px;
 
@@ -35,7 +41,7 @@ body{
 
 input{
 
-    width:100%;
+    width:90%;
 
     padding:10px;
 
