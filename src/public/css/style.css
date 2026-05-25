@@ -2,6 +2,7 @@ body{
 
 
 background-image: url("/img/imgFundo.jpg");
+
 background-size: cover;
     font-family: Arial;
 
@@ -16,6 +17,27 @@ background-size: cover;
     height:100vh;
 
     padding-left: 200px;
+}
+
+.logo{
+
+    width: 600px;
+
+    height: 600px;
+
+    background-image: url("/img/Logo.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 20px;
 }
 
 .container{
