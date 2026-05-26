@@ -16,11 +16,11 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 
-const loginRoutes = require("./routes/loginRoutes");
 
-const homeRoutes = require("./routes/homeRoutes");
 
-app.use(loginRoutes);
+const homeRoutes = require("./routes/myRoutes");
+
+
 
 app.use(homeRoutes);
 

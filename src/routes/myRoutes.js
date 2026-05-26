@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
+const HomeController = require("../controllers/homeControllers");
 const LoginController = require("../controllers/loginControllers");
 
-router.get("/", LoginController.telaLogin);
+router.get("/home", HomeController.home);
 
-router.post("/login", LoginController.login);
+router.get("/login", LoginController.login);
+
+
+
 
 module.exports = router;
 

@@ -38,7 +38,7 @@ body{
 }
 
 .logo{
-    width:180px;
+    width: 200px;
 }
 
 .btn-topo{
@@ -146,7 +146,7 @@ body{
     box-shadow:0 3px 8px rgba(0,0,0,.3);
 }
 
-/* STATUS */
+
 
 .disponivel{
     background:#22ff00;
