@@ -1,34 +1,28 @@
+const express = require("express");
 const path = require("path");
-// Imortando o pacote Express
-const express = require("express")
-//Inicializando o Express
+
 const app = express();
-const port = 3000;
 
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.urlencoded({ extended:true }));
 
 
+app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "public")));
 
 
-// Engine de views
-app.set("view engine", "ejs");
+const loginRoutes = require("./routes/loginRoutes");
+const homeRoutes = require("./routes/homeRoutes");
+
+app.use(loginRoutes);
+app.use(homeRoutes);
 
 
-// Caminho das views
-app.set("views", path.join(__dirname, "views"));
+app.listen(3000, () => {
 
-
-app.get("/", (req, res) => {
-
-    res.render("telaLogin");
+    console.log("Servidor rodando");
 
 });
-
-module.exports = app;
-
 
 

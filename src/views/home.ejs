@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Book College</title>
+
+    <link rel="stylesheet" href="/css/home.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        
+        <header class="topo">
+
+            <a href="/aluno/cadastro" class="btn-topo">
+                Cadastrar Aluno
+            </a>
+
+            <img src="/img/logo.png" class="logo">
+
+            <a href="/livro/cadastro" class="btn-topo">
+                Cadastrar Livro
+            </a>
+
+        </header>
+
+        
+        <main class="painel">
+
+            
+            <div class="pesquisa-box">
+
+                <input
+                    type="text"
+                    placeholder="Pesquisar aluno..."
+                >
+
+                <button class="btn-search">
+                    🔍
+                </button>
+
+            </div>
+
+        
+            <section class="lista-alunos">
+
+                <% alunos.forEach(aluno => { %>
+
+                    <div class="linha-aluno">
+
+                        <div class="aluno <%= aluno.status %>">
+
+                            <span>
+                                <%= aluno.nome %>
+                            </span>
+
+                        </div>
+
+                        <div class="acoes">
+
+                            <a
+                                href="/aluno/editar/<%= aluno.id %>"
+                                class="btn-acao"
+                            >
+                                ✏️
+                            </a>
+
+                            <a
+                                href="/emprestimo/<%= aluno.id %>"
+                                class="btn-acao"
+                            >
+                                ➕
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                <% }) %>
+
+            </section>
+
+        </main>
+
+    
+        <img
+            src="/img/book.png"
+            class="icone-book"
+        >
+
+    </div>
+
+</body>
+</html>

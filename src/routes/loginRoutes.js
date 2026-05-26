@@ -1,41 +1,16 @@
-app.get('/', (req,res) => {
-    console.log("Requisição tipo GET realizada na rota /");
-    res.sed("<h1>Bem Vindo ao Sistem XPTO</h1>");
-});
+const express = require("express");
+const router = express.Router();
+
+const LoginController = require("../controllers/loginControllers");
+
+router.get("/", LoginController.telaLogin);
+
+router.post("/login", LoginController.login);
+
+module.exports = router;
 
 
-app.get('/', (req,res) => {
-    console.log("Requisição do tipo get na rota /CadastroCliente");
-    res.send("<h1>Cadastro Cliente</h1>")
-})
-
-
-app.get('/', (req,res) => {
-    const termoDeBusca = req.query.termo;
-    if(termoDeBusca){
-        console.log("Parametro via query: " + termoDeBusca)
-        res.send(`<h1> Você pesquisou por ${termoDeBusca}`);
-        
-    }else{
-        res.send(`<h1> Você não passou o parametro de busca</h1>`);
-    }
-});
-
-//Modelo errado de passar queryParam
-app.get(`/login`, (req,res) => {
-    const pLogin = req.query.login;
-    const pSenha = req.query.senha;
-
-    if(pLogin === 'Alex' && pSenha === '1234'){
-        res.send("<h1> Bem Vindo Alex</h1>")
-    }else{
-        res.send("<h1> Bem Vindo Alex</h1>") 
-    }
-
-    res.send("<h1>Usuario ou senha incorretos</h1>");
-});
-
-
+/*
 // NOVO METODO HTTP
 app.post('/recebeform', (req,res) =>{
     const dados = req.body;
@@ -55,7 +30,7 @@ app.post('/login', (req,res) => {
 });
 
 
-app.post('/cadastroProduto', (req,res) => {
+app.post('/cadastroLivro', (req,res) => {
     const {codigo, nome, preco} = req.body;
 
     if(codigo && nome && preco){
@@ -75,3 +50,9 @@ app.post('/cadastroProduto', (req,res) => {
             res.status(400).send("<h1>Faltou algum parametro</h1>");
         }
     })
+
+
+    app.delete("/deletaluno", (req,res) =>{
+
+    })
+        */
