@@ -8,7 +8,7 @@ class LoginController {
 
     static login(req, res){
 
-        res.redirect("/home");
+        res.redirect("/login");
 
     }
 }
