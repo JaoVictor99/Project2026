@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     res.redirect("/login");
 });
 
-router.get("/login", LoginController.login);
+router.get("/login", LoginController.telaLogin);
 router.post("/login", LoginController.login);
 
 router.get("/home", HomeController.home);

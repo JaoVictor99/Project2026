@@ -12,10 +12,11 @@
     <div class="container">
 
         <h2>Login</h2>
-        <form id="login" action="/login" method="POST">
+        <form id="login" method="POST">
 
             <input
                 type="text"
+                id="identificador"
                 name="identificador"
                 placeholder="Digite seu ID"
                 required
@@ -23,15 +24,14 @@
 
             <input
                 type="password"
+                id="senha"
                 name="senha"
                 placeholder="Digite sua senha"
                 required
             >
-
-            <button onclick="login">
-                Entrar
-            </button>
         </form>
+
+        <button onclick = "validarlogin()"  type="button">Entrar</button>
     </div>
 </body>
         <script src="/frontJS/login.js"></script>

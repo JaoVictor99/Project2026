@@ -1,14 +1,9 @@
-class LoginController {
-
-
-     async  name(params) {
-        
-    } login() {
+async function validarlogin() {
 
     const id = document.getElementById("identificador").value;
     const senha = document.getElementById("senha").value;
 
-    const resposta = await fetch("http://localhost:3000/login", {
+    const resposta = await fetch("/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,6 +13,14 @@ class LoginController {
             senha: senha
         })
     });
-}
 
+    const dados = await resposta.json();
+
+    console.log("Resposta:", dados);
+
+    if (dados.sucesso) {
+        window.location.href = dados.redirect;
+    } else {
+        alert(dados.mensagem);
+    }
 }
