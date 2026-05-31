@@ -2,15 +2,20 @@ const express = require("express");
 const router = express.Router();
 
 const LoginController = require("../controllers/loginControllers");
+const HomeController = require("../controllers/homeControllers");
 
 router.get("/", (req, res) => {
     res.redirect("/login");
 });
 
 router.get("/login", LoginController.login);
+router.post("/login", LoginController.login);
+
+router.get("/home", HomeController.home);
+
+
 
 module.exports = router;
-
 
 /*
 // NOVO METODO HTTP

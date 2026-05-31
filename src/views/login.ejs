@@ -2,26 +2,21 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="/css/telaLogin.css">
-
 </head>
-
 <body>
 
     <div class="logo"></div>
-
     <div class="container">
 
         <h2>Login</h2>
-
-        <form action="/login" method="POST">
+        <form id="login" action="/login" method="POST">
 
             <input
                 type="text"
-                name="id"
+                name="identificador"
                 placeholder="Digite seu ID"
                 required
             >
@@ -33,14 +28,11 @@
                 required
             >
 
-            <button type="submit">
+            <button onclick="login">
                 Entrar
             </button>
-
         </form>
-
     </div>
-
 </body>
-
+        <script src="/frontJS/login.js"></script>
 </html>

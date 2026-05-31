@@ -1,16 +1,18 @@
 class LoginController {
 
-    static telaLogin(req, res){
+    static async login(req, res) {
 
-        res.render("login");
+        const { identificador, senha } = req.body;
 
+        try{
+           if (identificador == "admin" && senha == "admin123");
+
+           
+        }catch(erro){
+    }
+        
     }
 
-    static login(req, res){
-
-        res.redirect("/login");
-
-    }
 }
 
 module.exports = LoginController;
