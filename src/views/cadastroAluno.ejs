@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno</title>
+
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="logo">
+            <img src="/img/logo.png" alt="Book College">
+        </div>
+
+        <form action="/alunos/cadastrar" method="POST">
+
+            <div class="campo">
+                <label>NOME:</label>
+                <input type="text" name="nome" required>
+            </div>
+
+            <div class="campo">
+                <label>MATRÍCULA:</label>
+                <input type="text" name="matricula" required>
+            </div>
+
+            <div class="campo">
+                <label>CURSO:</label>
+                <input type="text" name="curso" required>
+            </div>
+
+            <div class="campo">
+                <label>TELEFONE:</label>
+                <input type="text" name="telefone" required>
+            </div>
+
+            <div class="campo">
+                <label>DATA DE CADASTRO:</label>
+                <input type="date" name="dataCadastro" required>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">
+                    Cadastrar Aluno
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

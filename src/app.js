@@ -20,6 +20,7 @@ app.set("view engine", "ejs");
 
 const minhaRota = require("./routes/myRoutes");
 
+
 app.use(minhaRota);
 
 module.exports = app;

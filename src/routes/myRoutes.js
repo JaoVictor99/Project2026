@@ -8,10 +8,16 @@ router.get("/", (req, res) => {
     res.redirect("/login");
 });
 
+router.get('/cadastroAluno', (req, res) => {
+    res.render('cadastroAluno');
+});
+
 router.get("/login", LoginController.telaLogin);
 router.post("/login", LoginController.login);
 
 router.get("/home", HomeController.home);
+
+
 
 
 
