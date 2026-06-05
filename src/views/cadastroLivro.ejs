@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros</title>
+    <link rel="stylesheet" href="/css/cadastroLivro.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+
+            <div class="logo-container">
+                <img src="/img/logo.png" class="logo">
+            </div>
+
+            <form action="/livros/cadastrar" method="POST">
+
+                <div class="campo">
+                    <label for="titulo">TÍTULO</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="autor">AUTOR</label>
+                    <input type="text" id="autor" name="autor" required>
+                </div>
+
+                <div class="campo">
+                    <label for="paginas">QUANTIDADE DE PÁGINAS</label>
+                    <input type="number" id="paginas" name="paginas" min="1" required>
+                </div>
+
+                <div class="campo">
+                    <label for="nacionalidade">NACIONALIDADE</label>
+                    <input type="text" id="nacionalidade" name="nacionalidade" required>
+                </div>
+
+                <div class="botoes">
+                    <button type="submit" class="btn-cadastrar">
+                        Cadastrar Livro
+                    </button>
+
+                    <button type="button" class="btn-editar">
+                        Editar Livro
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

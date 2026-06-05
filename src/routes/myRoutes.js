@@ -12,6 +12,13 @@ router.get('/cadastroAluno', (req, res) => {
     res.render('cadastroAluno');
 });
 
+router.get('/cadastroLivro', (req, res) => {
+    res.render('cadastroLivro');
+});
+
+
+
+
 router.get("/login", LoginController.telaLogin);
 router.post("/login", LoginController.login);
 
