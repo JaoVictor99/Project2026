@@ -16,8 +16,6 @@ async function validarlogin() {
 
     const dados = await resposta.json();
 
-    //console.log("Resposta:", dados);
-
     if (dados.sucesso) {
         window.location.href = dados.redirect;
     } else {
