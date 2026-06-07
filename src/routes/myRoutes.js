@@ -3,26 +3,32 @@ const router = express.Router();
 
 const LoginController = require("../controllers/loginControllers");
 const HomeController = require("../controllers/homeControllers");
+const AlunoController = require("../controllers/alunoControllers")
 
 router.get("/", (req, res) => {
     res.redirect("/login");
 });
 
-router.get('/cadastroAluno', (req, res) => {
+
+router.post("/cadastroAluno", AlunoController.cadastrar);
+
+router.get('/cadastroAluno', (req,res) => {
     res.render('cadastroAluno');
-});
+})
 
 router.get('/cadastroLivro', (req, res) => {
     res.render('cadastroLivro');
 });
 
-
+router.get('/home', (req,res) => {
+    res.render('home');
+})
 
 
 router.get("/login", LoginController.telaLogin);
 router.post("/login", LoginController.login);
 
-router.get("/home", HomeController.home);
+//router.get("/home", HomeController.home);
 
 
 

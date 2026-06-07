@@ -1,35 +1,33 @@
-async function capturarAluno() {
+ async function capturarAluno() {
     try {
-        const name = document.getElementById("nome").value;
+        const nome = document.getElementById("nome").value;
         const matricula = document.getElementById("matricula").value;
         const curso = document.getElementById("curso").value;
-        const phone = document.getElementById("telefone").value;
-        const date = document.getElementById("dataCadastro").value
+        const telefone = document.getElementById("telefone").value;
+        const date = document.getElementById("dataCadastro").value;
 
-        const resposta = await fetch("/cadastroAluno", {
+        const resposta = await fetch("http://localhost:3000/cadastroAluno", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nome: name,
+                nome: nome,
                 matricula: matricula,
                 curso: curso,
-                telefone: phone,
+                telefone: telefone,
                 dataCadastro: date
 
             })
-
-
         });
 
-        const sucess = await resposta.json();
+          const dados = await resposta.json();
 
-
-        if (sucess.sucesso) {
-            window.location.href = sucess.redirect;
+        if (resposta.ok) {
+            alert("Aluno cadastrado com sucesso!");
+            console.log(dados);
         } else {
-            alert(sucess.mensagem);
+            alert(dados.mensagem);
         }
 
     } catch (error) {
