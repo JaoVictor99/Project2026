@@ -7,7 +7,7 @@ class AlunoController {
             const { nome, matricula, curso, telefone, dataCadastro } = req.body;
 
 
-            console.log(req.body)
+            // console.log(req.body)
 
             const result = await pool.query(`
     INSERT INTO aluno
@@ -21,12 +21,14 @@ class AlunoController {
         $4,
         CURRENT_DATE 
     )
-`,[nome,matricula,curso,telefone]
-);
+`, [nome, matricula, curso, telefone]
+            );
 
-            
-            console.log(result);
-            return res.redirect ('/home')
+            return res.status(200).json({
+                sucesso: true
+            });
+
+
 
         } catch (error) {
 
@@ -40,3 +42,4 @@ class AlunoController {
 }
 
 module.exports = new AlunoController();
+

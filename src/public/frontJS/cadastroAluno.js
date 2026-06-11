@@ -1,10 +1,10 @@
- async function capturarAluno() {
+async function capturarAluno() {
     try {
         const nome = document.getElementById("nome").value;
         const matricula = document.getElementById("matricula").value;
         const curso = document.getElementById("curso").value;
         const telefone = document.getElementById("telefone").value;
-        const date = document.getElementById("dataCadastro").value;
+        //const date = document.getElementById("dataCadastro").value;
 
         const resposta = await fetch("http://localhost:3000/cadastroAluno", {
             method: "POST",
@@ -16,18 +16,18 @@
                 matricula: matricula,
                 curso: curso,
                 telefone: telefone,
-                dataCadastro: date
+                //dataCadastro: date
 
             })
         });
 
-          const dados = await resposta.json();
+        const dados = await resposta.json();
 
-        if (resposta.ok) {
+        if (dados.sucesso) {
             alert("Aluno cadastrado com sucesso!");
-            console.log(dados);
-        } else {
-            alert(dados.mensagem);
+
+            window.location.href = "/home";
+
         }
 
     } catch (error) {

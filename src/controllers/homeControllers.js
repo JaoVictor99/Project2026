@@ -1,31 +1,28 @@
+const pool = require('../db/conn');
+
 class HomeController {
 
-    static home(req, res){
+    async buscarAlunos(req, res) {
+        try {
+            const result = await pool.query(`
+    SELECT
+                id_aluno,
+                nm_aluno
+            FROM aluno
+            
+    
+`,
+            );
+            res.status(200).json(result.row[0]);
 
-        const alunos = [
+        } catch (error) {
 
-            {
-                id:1,
-                nome:"Carlos Roberto da Silva",
-                status:"atencao"
-            },
-
-            {
-                id:2,
-                nome:"Aline Silverio da Rocha",
-                status:"disponivel"
-            },
-
-            {
-                id:3,
-                nome:"Marcinho Pereira Santos",
-                status:"atrasado"
-            }
-
-        ];
-
-        res.render("home", { alunos });
-
+            console.error("Erro: ", error);
+            return res.status(500).json({
+                sucesso: false,
+                mensagem: "Erro interno do servidor"
+            });
+        }
     }
 
 }
