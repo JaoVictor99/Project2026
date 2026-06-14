@@ -19,18 +19,19 @@
         <main class="painel">
 
             <div class="pesquisa-box">
-                <input type="text" placeholder="Pesquisar aluno...">
-                <button class="btn-search"></button>
+                <input type="text" id="pesquisa" placeholder="Pesquisar aluno..."> <button class="btn-search"></button>
             </div>
 
             <section class="lista-alunos">
 
-                <% if (alunos.length > 0) { %>
-                    <% alunos.forEach(aluno => { %>
+                <% if (alunos.length> 0) { %>
+                    <% alunos.forEach(aluno=> { %>
 
                         <div class="linha-aluno">
                             <div class="aluno">
-                                <span><%= aluno.nm_aluno %></span>  
+                                <span>
+                                    <%= aluno.nm_aluno %>
+                                </span>
                             </div>
                             <div class="acoes">
                                 <a href="/aluno/editar/<%= aluno.id_aluno %>" class="btn-acao">✏️</a>
@@ -38,10 +39,10 @@
                             </div>
                         </div>
 
-                    <% }) %>
-                <% } else { %>
-                    <p>Nenhum aluno cadastrado.</p>
-                <% } %>
+                        <% }) %>
+                            <% } else { %>
+                                <p>Nenhum aluno cadastrado.</p>
+                                <% } %>
 
             </section>
         </main>
@@ -54,7 +55,7 @@
 
 </body>
 
-<!-- ✅ Corrigido -->
+
 <script src="/frontDao/home.js"></script>
 
 </html>

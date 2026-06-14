@@ -22,6 +22,11 @@ body{
     max-width:1200px;
 }
 
+.lista-alunos {
+    max-height: 500px; /* altura máxima antes de rolar */
+    overflow-y: auto;  /* scroll vertical automático */
+}
+
 .topo{
 
     background:#d9d9d9;
