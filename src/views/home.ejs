@@ -1,99 +1,60 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
-<head>
 
+<head>
     <meta charset="UTF-8">
     <title>Book College</title>
-
     <link rel="stylesheet" href="/css/home.css">
-
 </head>
-<body>
 
+<body>
     <div class="container">
 
-        
         <header class="topo">
-
-            <a href="/cadastroAluno" class="btn-topo">
-                Cadastrar Aluno
-            </a>
-
+            <a href="/cadastroAluno" class="btn-topo">Cadastrar Aluno</a>
             <img src="/img/logo.png" class="logo">
-
-            <a href="/cadastroLivro" class="btn-topo">
-                Cadastrar Livro
-            </a>
-
+            <a href="/cadastroLivro" class="btn-topo">Cadastrar Livro</a>
         </header>
 
-        
         <main class="painel">
 
-            
             <div class="pesquisa-box">
-
-                <input
-                    type="text"
-                    placeholder="Pesquisar aluno..."
-                >
-
-                <button class="btn-search">
-                    
-                </button>
-
+                <input type="text" placeholder="Pesquisar aluno...">
+                <button class="btn-search"></button>
             </div>
 
-        
             <section class="lista-alunos">
 
-                
+                <% if (alunos.length > 0) { %>
+                    <% alunos.forEach(aluno => { %>
 
-                    <div class="linha-aluno">
-
-                        <div class="aluno">
-
-                            <span>
-                             
-                            </span>
-
+                        <div class="linha-aluno">
+                            <div class="aluno">
+                                <span><%= aluno.nm_aluno %></span>  
+                            </div>
+                            <div class="acoes">
+                                <a href="/aluno/editar/<%= aluno.id_aluno %>" class="btn-acao">✏️</a>
+                                <a href="/emprestimo/<%= aluno.id_aluno %>" class="btn-acao">📚</a>
+                            </div>
                         </div>
 
-                        <div class="acoes">
-
-                            <a
-                                href="/aluno/editar"
-                                class="btn-acao"
-                            >
-                                
-                            </a>
-
-                            <a
-                                href="/emprestimo/"
-                                class="btn-acao"
-                            >
-                                
-                            </a>
-
-                        </div>
-
-                    </div>
-
-               
+                    <% }) %>
+                <% } else { %>
+                    <p>Nenhum aluno cadastrado.</p>
+                <% } %>
 
             </section>
-
         </main>
 
-    <a href="/src/views/pesquisarLivro.ejs">
-         <img
-            src="/img/book.png"
-            class="icone-book"
-        >
-    </a>
-       
+        <a href="/pesquisarLivro">
+            <img src="/img/book.png" class="icone-book">
+        </a>
+
     </div>
 
 </body>
-</html> 
+
+<!-- ✅ Corrigido -->
+<script src="/frontDao/home.js"></script>
+
+</html>
