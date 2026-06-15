@@ -42,9 +42,6 @@ async function capturarAluno() {
 
 
 
-
-
-
 async function buscarAluno(id) {
     try {
         const resposta = await fetch(`http://localhost:3000/alunos/${id}`);
@@ -60,6 +57,7 @@ async function buscarAluno(id) {
     }
 };
 
+
 async function atualizarAluno(id) {
     try {
         const nome = document.getElementById("nome").value;
@@ -69,13 +67,12 @@ async function atualizarAluno(id) {
 
         const resposta = await fetch(`http://localhost:3000/alunos/${id}`, {
             method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nome, matricula, curso, telefone })
         });
 
         const dados = await resposta.json();
+
         if (dados.sucesso) {
             alert("Aluno atualizado com sucesso!");
         } else {
@@ -86,26 +83,5 @@ async function atualizarAluno(id) {
         alert("Erro interno do servidor");
     } finally {
         window.location.href = "/home";
-    }
-}
-
-async function deletarAluno(id) {
-    try {
-        if (!confirm("Tem certeza que deseja excluir este aluno?")) return;
-
-        const resposta = await fetch(`http://localhost:3000/alunos/${id}`, {
-            method: "DELETE"
-        });
-
-        const dados = await resposta.json();
-        if (dados.sucesso) {
-            alert("Aluno deletado com sucesso!");
-            window.location.reload();
-        } else {
-            alert(dados.mensagem);
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Erro interno do servidor");
     }
 }

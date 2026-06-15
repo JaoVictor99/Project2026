@@ -27,9 +27,11 @@ router.get('/cadastroLivro', (req, res) => {
 router.get('/home', AlunoController.home);   
 router.get('/alunos', AlunoController.listar); 
 router.post("/cadastroAluno", AlunoController.cadastrar);
-
-router.get('/alunos', AlunoController.listar);
 router.get('/alunos/:id', AlunoController.buscarPorId);
+
+// ✅ Adicionar essa rota
+router.get('/aluno/editar/:id', AlunoController.telaEditar);
+// ✅ Deve estar assim
 router.put('/alunos/:id', AlunoController.atualizar);
 router.delete('/alunos/:id', AlunoController.deletar)
 
