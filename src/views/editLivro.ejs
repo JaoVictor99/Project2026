@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros</title>
+    <link rel="stylesheet" href="/css/cadastroLivro.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+
+            <div class="logo-container">
+                <img src="/img/logo.png" class="logo">
+            </div>
+
+            <form>
+
+                <div class="campo">
+                    <label for="titulo">TÍTULO</label>
+                    <input type="text" id="titulo" value="<%= livro.titulo %>"  required>
+                </div>
+
+                <div class="campo">
+                    <label for="autor">AUTOR</label>
+                    <input type="text" id="autor" value="<%= livro.autor %>" required>
+                </div>
+
+                <div class="campo">
+                    <label for="paginas">QUANTIDADE DE PÁGINAS</label>
+                    <input type="number" id="quant_paginas" value="<%= livro.quant_paginas%>" required>
+                </div>
+
+                <div class="campo">
+                    <label for="nacionalidade">NACIONALIDADE</label>
+                    <input type="text" id="nacionalidade" value="<%= livro.nacionalidade%>" required>
+                </div>
+
+                <div class="botoes">
+                    <button type="button" class="btn-cadastrar" onclick="atualizarLivro(<%= livro.id_livro %>)">
+                        Cadastrar Livro
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+<script src="/frontDao/cadastroLivro.js"></script>
+</html>

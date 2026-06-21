@@ -106,7 +106,9 @@ async atualizar(req, res) {
     }
 }
 
-        async deletar(req, res) {
+
+
+async deletar(req, res) {
         try {
             const { id } = req.params;
             const result = await pool.query('DELETE FROM aluno WHERE id_aluno = $1', [id]);

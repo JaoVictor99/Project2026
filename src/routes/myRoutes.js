@@ -3,6 +3,9 @@ const router = express.Router();
 
 const LoginController = require("../controllers/loginControllers");
 const AlunoController = require("../controllers/alunoControllers");
+const LivroController = require("../controllers/livroControllers");
+const livroControllers = require("../controllers/livroControllers");
+
 
 router.get("/", (req, res) => {
     res.redirect("/login");
@@ -10,19 +13,21 @@ router.get("/", (req, res) => {
 
 
 
-router.get('/cadastroAluno', (req,res) => {
-    res.render('cadastroAluno');
-})
-
 router.get('/cadastroLivro', (req, res) => {
     res.render('cadastroLivro');
 });
 
-// router.get('/home', (req,res) => {
-//     res.render('home');
-// })
+router.post('/cadastroLivro', LivroController.cadastrarLivro);
+router.get('/pesquisarLivro', LivroController.telaPesquisar);
+router.get('/livro/editar/:id', LivroController.telaEditLivro);
+router.put('/livro/:id', LivroController.atualizarLivro);
+router.delete('/livro/:id', LivroController.deletarLivro);
 
 
+
+router.get('/cadastroAluno', (req,res) => {
+    res.render('cadastroAluno');
+})
 
 router.get('/home', AlunoController.home);   
 router.get('/alunos', AlunoController.listar); 

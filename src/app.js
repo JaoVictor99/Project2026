@@ -8,7 +8,7 @@ db.connect((err) => {
     console.log("PostgreSQL conectado!");
 });
 
-app.use("/frontJS", express.static(path.join(__dirname, "frontDao")));
+app.use("/frontDao", express.static(path.join(__dirname, "frontDao")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

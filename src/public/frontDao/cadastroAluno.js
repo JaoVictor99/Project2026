@@ -1,3 +1,18 @@
+const inputPesquisa = document.getElementById("pesquisa");
+if (inputPesquisa) {
+    inputPesquisa.addEventListener("input", function () {
+        const termo = this.value.toLowerCase();
+        const alunos = document.querySelectorAll(".linha-aluno");
+
+        alunos.forEach(aluno => {
+            const nome = aluno.querySelector(".aluno span").textContent.toLowerCase();
+            aluno.style.display = nome.includes(termo) ? "flex" : "none";
+        });
+    });
+}
+
+
+
 async function capturarAluno() {
     try {
         const nome = document.getElementById("nome").value;
@@ -83,5 +98,27 @@ async function atualizarAluno(id) {
         alert("Erro interno do servidor");
     } finally {
         window.location.href = "/home";
+    }
+}
+
+async function deletarAluno(id) {
+    try {
+        if (!confirm("Tem certeza que deseja excluir este aluno?")) return;
+
+        const resposta = await fetch(`http://localhost:3000/alunos/${id}`, {
+            method: "DELETE"
+        });
+
+        const dados = await resposta.json();
+
+        if (dados.sucesso) {
+            alert("Aluno deletado com sucesso!");
+            window.location.reload(); 
+        } else {
+            alert(dados.mensagem);
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Erro interno do servidor");
     }
 }

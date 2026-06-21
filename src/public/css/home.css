@@ -23,8 +23,8 @@ body{
 }
 
 .lista-alunos {
-    max-height: 500px; /* altura máxima antes de rolar */
-    overflow-y: auto;  /* scroll vertical automático */
+    max-height: 500px; 
+    overflow-y: auto;  
 }
 
 .topo{

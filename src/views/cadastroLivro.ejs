@@ -19,7 +19,7 @@
                 <img src="/img/logo.png" class="logo">
             </div>
 
-            <form action="/livros/cadastrar" method="POST">
+            <form method="POST">
 
                 <div class="campo">
                     <label for="titulo">TÍTULO</label>
@@ -33,7 +33,7 @@
 
                 <div class="campo">
                     <label for="paginas">QUANTIDADE DE PÁGINAS</label>
-                    <input type="number" id="paginas" name="paginas" min="1" required>
+                    <input type="number" id="quant_paginas" name="paginas" min="1" required>
                 </div>
 
                 <div class="campo">
@@ -42,12 +42,8 @@
                 </div>
 
                 <div class="botoes">
-                    <button type="submit" class="btn-cadastrar" onclick="capturarLivro()">
+                    <button  class="btn-cadastrar" onclick="capturarLivro()" type="button">
                         Cadastrar Livro
-                    </button>
-
-                    <button type="button" class="btn-editar" onclick="">
-                        Editar Livro
                     </button>
                 </div>
 
@@ -58,5 +54,5 @@
     </div>
 
 </body>
-
+<script src="/frontDao/cadastroLivro.js"></script>
 </html>
